@@ -3,7 +3,8 @@ echo "Installing Ruby 1.9.2 stable and making it the default Ruby ..."
 	curl https://raw.github.com/gist/856296/a19ac26fe7412ef398bd9f57e61f06fef1f186fe/patch-1.9.2-gc.patch > gc.patch
 	rvm install 1.9.2-p180 --patch load.patch,gc.patch -n loadgc
 	rm gc.patch load.patch
-  rvm use ruby-1.9.2-p180-loadgc --default
+        source ~/.bash_profile
+        rvm use ruby-1.9.2-p180-loadgc --default
 	mkdir -p ~/.rvm/hooks
 	cat <<EOF > ~/.rvm/hooks/after_use
 	case "\$rvm_ruby_string" in
