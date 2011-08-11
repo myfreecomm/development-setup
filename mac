@@ -15,6 +15,7 @@ echo "Installing Postgres, a good open source relational database ..."
   mkdir -p ~/Library/LaunchAgents
   cp /usr/local/Cellar/postgresql/9.0.4/org.postgresql.postgres.plist ~/Library/LaunchAgents/
   launchctl load -w ~/Library/LaunchAgents/org.postgresql.postgres.plist
+  createuser -s postgres
 
 echo "Installing RVM (Ruby Version Manager) ..."
   curl -s https://rvm.beginrescueend.com/install/rvm -o rvm-installer ; chmod +x rvm-installer ; ./rvm-installer --version latest
